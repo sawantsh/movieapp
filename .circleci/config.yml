@@ -47,12 +47,12 @@ jobs:
           command: |
               if [ "${CIRCLE_BRANCH}" == "master"]
               then
-               aws --regin ${AWS_REGION} s3 sync ~/repo/build s3://${AWS_BUCKET_PRODUCTION} --delete
+               aws --region ${AWS_REGION} s3 sync ~/repo/build s3://${AWS_BUCKET_PRODUCTION} --delete
               elif [ "${CIRCLE_BRANCH}" == "staging"]
               then
-               aws --regin ${AWS_REGION} s3 sync ~/repo/build s3://${AWS_BUCKET_STAGING} --delete
+               aws --region ${AWS_REGION} s3 sync ~/repo/build s3://${AWS_BUCKET_STAGING} --delete
               else
-               aws --regin ${AWS_REGION} s3 sync ~/repo/build s3://${AWS_BUCKET_DEV} --delete
+               aws --region ${AWS_REGION} s3 sync ~/repo/build s3://${AWS_BUCKET_DEV} --delete
               fi
           name: "Deploy to AWS S3"
     working_directory: ~/repo
