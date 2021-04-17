@@ -9,7 +9,7 @@ jobs:
           command: "echo ${CIRCLE_BRANCH}"
           name: "Show current branch"
       - restore_cache: 
-          key: 
+          keys: 
             - app-{{checksum "package.json"}}
             - app-
       - run: 
